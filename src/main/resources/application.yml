@@ -10,8 +10,13 @@ spring:
     gateway:
       discovery:
         locator:
-          # 让gateway通过服务发现组件找到其它的微服务
+          # 璁ゞateway閫氳繃鏈嶅姟鍙戠幇缁勪欢鎵惧埌鍏跺畠鐨勫井鏈嶅姟
           enabled: true
+      routes:
+        - id: after_route
+          uri: lb://user-center
+          predicates:
+            - After=2019-12-01T22:11:13.669378800+08:00[Asia/Shanghai]
 # actuator
 management:
   endpoints:
