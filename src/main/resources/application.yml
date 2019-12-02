@@ -16,7 +16,7 @@ spring:
         - id: after_route
           uri: lb://user-center
           predicates:
-            - After=2019-12-01T22:11:13.669378800+08:00[Asia/Shanghai]
+            - TimeBetween=上午9:00,下午11:00
 # actuator
 management:
   endpoints:
