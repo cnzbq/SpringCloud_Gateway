@@ -16,9 +16,10 @@ spring:
         - id: after_route
           uri: lb://user-center
           predicates:
-            - TimeBetween=上午0:00,下午12:00
+            - TimeBetween=上午0:00,下午11:59
           filters:
             - AddRequestHeader=X-Request-Foo, Bar
+            - PreLog=a,b
 # actuator
 management:
   endpoints:
